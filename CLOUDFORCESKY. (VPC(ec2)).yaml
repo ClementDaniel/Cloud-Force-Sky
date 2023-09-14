@@ -1,0 +1,118 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create a VPC with a private subnet, EC2 Connect endpoint, and an EC2 instance
+
+Parameters:
+  VpcCidrBlock:
+    Description: CIDR block for the VPC
+    Type: String
+    Default: 10.0.0.0/16
+
+Resources:
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidrBlock
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+
+  MyPrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: !Ref VpcCidrBlock
+      AvailabilityZone: "us-east-1a"
+      MapPublicIpOnLaunch: false
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: Cloud Force Sky KP  # Replace 'YourExistingKeyPairName' with the actual name of the existing key pair
+      ImageId: ami-04cb4ca688797756f
+      SubnetId: !Ref MyPrivateSubnet
+      SecurityGroupIds:
+        - !Ref MyEC2SecurityGroupid
+
+  MyEC2SecurityGroupid:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: None
+      VpcId: !Ref MyVPC
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          FromPort: 22
+          ToPort: 22
+          IpProtocol: tcp
+
+  MyEC2ConnectEndpoint:
+    Type: AWS::EC2::InstanceConnectEndpoint
+    Properties:
+      InstanceId: !Ref MyEC2Instance
+
+Outputs:
+  VPCId:
+    Description: VPC ID
+    Value: !Ref MyVPC
+
+  PrivateSubnetId:
+    Description: Private Subnet ID
+    Value: !Ref MyPrivateSubnet
+
+  EC2InstanceId:
+    Description: EC2 Instance ID
+    Value: !Ref MyEC2Instance
+
+  EC2ConnectEndpointId:
+    Description: EC2 Connect Endpoint ID
+    Value: !Ref MyEC2ConnectEndpoint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+     
