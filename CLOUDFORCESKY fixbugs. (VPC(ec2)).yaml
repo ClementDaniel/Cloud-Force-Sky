@@ -47,8 +47,7 @@ Resources:
   MyEC2ConnectEndpoint:
     Type: AWS::EC2::InstanceConnectEndpoint
     Properties:
-      InstanceId: !Ref MyEC2Instance
-
+      SubnetId: subnet-0181205b602bcc1ce
 Outputs:
   VPCId:
     Description: VPC ID
@@ -65,10 +64,6 @@ Outputs:
   EC2ConnectEndpointId:
     Description: EC2 Connect Endpoint ID
     Value: !Ref MyEC2ConnectEndpoint
-
-
-
-
 
 
 
