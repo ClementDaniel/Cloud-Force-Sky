@@ -19,25 +19,25 @@ Experts in cloud security cautioned that employing public resources can expose u
 You have complete control over your virtual networking environment with Amazon Virtual Private Cloud (Amazon VPC), including resource placement, connectivity, and security. Setup your VPC in the AWS service panel to get going. Next, add resources to it such as Amazon Relational Database Service (RDS) instances and Amazon Elastic Compute Cloud (EC2) instances. Define the channels of communication between your VPCs across accounts, Availability Zones, and AWS Regions. 
 
 ## Type of Amazon VPC
-*AWS VPC Peering:* Through the use of quick and dependable connections, AWS VPC Peering allows two private networks to communicate with one another. To transport traffic between VPC networks or to grant access to resources on one network to another, Amazon VPC peering connections can be used.
+- *AWS VPC Peering:* Through the use of quick and dependable connections, AWS VPC Peering allows two private networks to communicate with one another. To transport traffic between VPC networks or to grant access to resources on one network to another, Amazon VPC peering connections can be used.
 Every single AWS account includes a default VPC in every supported region. Peering really permits communication between two VPCs based on the network address of a particular resource. AWS VPC Peering does not, however, provide transitive peering. Simply said, transitive peering means that because VPC-B is connected to VPC-C, VPC-A can communicate with resources in VPC-C via VPC-B. This VPC Peering does not support this kind of networking and communication setup.
 
 ## The VPC Architecture:
- **Subnets:** A network’s division is known as a subnet. Subnetting is the process of dividing a network into smaller subnets or subnetworks. We’ll now discuss public and private subnets.
+ - **Subnets:** A network’s division is known as a subnet. Subnetting is the process of dividing a network into smaller subnets or subnetworks. We’ll now discuss public and private subnets.
 
-**Public subnets:** They are frequently used when the resources need to be connected to the internet, such as when web servers are involved. The primary route table routes subnet traffic intended for the internet to the internet gateway. As a result, this kind of subnet is known as a public subnet
+- **Public subnets:** They are frequently used when the resources need to be connected to the internet, such as when web servers are involved. The primary route table routes subnet traffic intended for the internet to the internet gateway. As a result, this kind of subnet is known as a public subnet
 Private subnets are utilized, on the other hand, for resources that don’t require an internet connection.
 Subnet size: Typically, private subnets have twice as many instances as public subnets.
-**Route Table:**
+- **Route Table:**
 AWS’s VPC offers total control over the traffic. You can achieve that by using route tables. A routing table is made up of rules that specify how and where traffic in a network will be directed. Each subnet in the Amazon Virtual Private Cloud has to have a routing table that governs the routing for that subnet. In a network, a routing table may be connected to various subnets.
 
 ## Advantages of AWS VPC
 #### AWS VPC Advantages
-**Security:** Security is the most important perk of VPC. Advanced security is offered by VPC in AWS at the instance and subnet levels. You can specify which users have access to cloud resources and which ones do not with VPC. Security is the most important perk of VPC. Advanced security is offered by VPC in AWS at the instance and subnet levels. You can specify which users have access to cloud resources and which ones do not with VPC.
+- **Security:** Security is the most important perk of VPC. Advanced security is offered by VPC in AWS at the instance and subnet levels. You can specify which users have access to cloud resources and which ones do not with VPC. Security is the most important perk of VPC. Advanced security is offered by VPC in AWS at the instance and subnet levels. You can specify which users have access to cloud resources and which ones do not with VPC.
 
-**Easy to Set up and Use:** As with all of AWS’s services, AWS VPC is simple to set up. The AWS Management Console makes it simple to set up an Amazon VPC. The default VPC for your account is already set up, allowing you to concentrate on developing and delivering apps.
+- **Easy to Set up and Use:** As with all of AWS’s services, AWS VPC is simple to set up. The AWS Management Console makes it simple to set up an Amazon VPC. The default VPC for your account is already set up, allowing you to concentrate on developing and delivering apps.
 
-**Application Performance:** Application performance is largely affected by the congestion on the Internet. It can slow down the application traffic or even make the application slow.
+- **Application Performance:** Application performance is largely affected by the congestion on the Internet. It can slow down the application traffic or even make the application slow.
 
 ## What is Amazon EC2?
 
@@ -47,7 +47,7 @@ Amazon Web Service EC2 (Amazon Elastic Compute Cloud), one of Amazon Web Service
 **Is EC2 a virtual machine?**
 Developers can create virtual machine instances and easily configure models' capacity scaling using the EC2 web interface. An Amazon EC2 instance also allows users to build apps to automate scaling according to changing needs and peak periods. It makes deploying virtual servers and managing storage simple, requiring less hardware and helping streamline development processes
 
-*How is EC2 billed?*
+- *How is EC2 billed?*
 EC2 pricing depends on the hours and size of an instance, region, and operating system
 
 **How do you set up AWS EC2?**
@@ -62,17 +62,17 @@ Stopped EC2 instances do not incur any charges. However, you will be charged for
 **Amazon EC2 features**
 Several benefits and features draw developers to EC2 for cloud computing. Chief among these are:
 
-Responsiveness to changing capacity requirements: The easy scaling of EC2 eliminates development obstacles when applications require more resources.
+- Responsiveness to changing capacity requirements: The easy scaling of EC2 eliminates development obstacles when applications require more resources.
 
-Flexibility in configurations: Users can choose memory size, CPU, and boot partition size optimized for their OS.
+- Flexibility in configurations: Users can choose memory size, CPU, and boot partition size optimized for their OS.
 
-Integration: EC2 can integrate with other AWS services, such as RDS, SimpleDB, and SQS.
+- Integration: EC2 can integrate with other AWS services, such as RDS, SimpleDB, and SQS.
 
-Precise control: Users get administrative access to their instances, can stop and start instances while retaining boot partition data, and can access console output for the instance.
+- Precise control: Users get administrative access to their instances, can stop and start instances while retaining boot partition data, and can access console output for the instance.
 
-Security: Users can control which instances remain private and have internet exposure. EC2 leverages Amazon Virtual Private Cloud (VPC) for security, and businesses can connect their secure IT infrastructure to resources in VPC.
+- Security: Users can control which instances remain private and have internet exposure. EC2 leverages Amazon Virtual Private Cloud (VPC) for security, and businesses can connect their secure IT infrastructure to resources in VPC.
 
-Cost: Among several pricing options, EC2 offers affordable hourly rates.
+- Cost: Among several pricing options, EC2 offers affordable hourly rates.
 
 **AWS EC2 benefits**
 EC2 has several benefits. One of the main benefits of AWS EC2 is its elastic load balancing, which automatically distributes incoming application traffic across several instances while identifying unhealthy instances, and reroutes traffic to the healthy versions until restored.
